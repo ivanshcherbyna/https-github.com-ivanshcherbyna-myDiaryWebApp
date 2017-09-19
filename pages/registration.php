@@ -1,5 +1,7 @@
 <h3>Registration Form</h3>
 <?php
+$obj= new DataBase();
+
 if(!isset($_POST['regbtn']))
 {
 ?>
@@ -26,11 +28,12 @@ if(!isset($_POST['regbtn']))
 }
 else
 {
-    
-    $reg=registration($_POST['login'],$_POST['pass1'],$_POST['email']);
+    $reg=$obj->registration($_POST['login'],$_POST['pass1'],$_POST['email']);
+   // $reg=registration($_POST['login'],$_POST['pass1'],$_POST['email']);
+    /* @var $reg type -> is result of reg. parametres */
     if($reg)
     {
-       registration($_POST['login'],$_POST['pass1'],$_POST['email']);
+       $obj->registration($_POST['login'],$_POST['pass1'],$_POST['email']);
        
        echo "<h3/><span style='color:green;'> New User Added!</span><h3/>";
     }

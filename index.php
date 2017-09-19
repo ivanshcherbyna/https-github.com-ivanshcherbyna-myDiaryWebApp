@@ -12,7 +12,8 @@
 
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script> 
+<script> //NEED Covered in Class for OOP
+    
 function logout_script(){
         var btn = document.getElementById('logOutForm');
         btn.style.display="hidden";
@@ -31,6 +32,8 @@ function login_script(){
             body{
              background-image: url('http://maxpixel.freegreatpicture.com/static/photo/1x/Diary-Stone-Wall-Personal-Business-Background-1446082.jpg'); 
              background-size: cover;
+             text-shadow: 1px 1px 2px black, 0 0 1em white; /* Parametres of shadow */
+             color: #ADD8E6;
         }
         </style>
     </head>
@@ -65,28 +68,32 @@ function login_script(){
        
  <?php
  require_once ('pages/functions.php');
+ $obj= new DataBase();
+ 
  if (isset($_POST['LoginBtn']))
      {
      
-     get_user($_POST['usr'],$_POST['pwd']);
+     $obj->get_user($_POST['usr'],$_POST['pwd']);
+     //get_user($_POST['usr'],$_POST['pwd']);//old vers
      
      }
  
     if (isset($_POST['LogoutBtn'])){
-        logOff_user();
+       $obj->logOff_user();
+        //logOff_user();//old vers
         
         }
 ?>
                 
         <div class="container" style="padding-top: 5px;">
-<div class="row">
+    <div class="row">
  
-    <header class="col-sm-12 col-md-12 col-lg-12">
+        <header class="col-sm-12 col-md-12 col-lg-12">
         <?php include_once ('pages/menu.php');
               include_once ('pages/functions.php');
         ?>
-    </header>
- </div>
+        </header>
+    </div>
             
  
  <nav class="col-sm-12 col-md-12 col-lg-12">

@@ -11,5 +11,5 @@ php?page=3'>Gallery</a></li>
 <li role='presentation'><a href='index.
 php?page=4'>Registration</a></li>
 </ul>
- 
+
         
